@@ -27,6 +27,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Agregamos un nuevo comando en el archivo package.json llamado `"test-watch":"jest --watchAll"`
 * Podemos tambien crear la carpeta de coverage por medio de comando `test-coverage:jest --coverage` en el archivo package.json
 
+## Test Unitario
+### Aplicacion para testear
+### Instalar Json-Server
+* Luego de descargar o crear el proyecto Angular corremos el comando `npm install json-server` y corremos con `json-server --watch db.json` para levantar el backend en la dirección `http://localhost:3000`
+
+### Estructura de un fichero de pruebas (.spec)
+### Crear Test y configurar el testBed
+### Fallos comunes configurando el testBed
+### Test a metodos con return
+### Test a métodos sin return (uso de spyOn)
+### Test a métodos privados
+### Test a suscripciones(subscribe-Observable)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
