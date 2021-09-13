@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   }
 
   public getBooks(): void {
+    // Devuelve un observable que dentro tiene una lista de libros 
     this.bookService.getBooks().pipe(take(1)).subscribe((resp: Book[]) => {
       this.listBook = resp;
     });
