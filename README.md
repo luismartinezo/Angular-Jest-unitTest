@@ -58,6 +58,14 @@ como sus nombre en ingles lo indican estos:
 ## Angular Material Dialog
 * Instalamos el angular material con `ng add @angular/material`
 
+### Automatizar test antes de generar un build 
+* En el archivo package.json podemo crear un comando personalizado para lanzar los test antes de hacer bulid por ejemplo: `tbuild: jest && ng build`
+
+## Consejos
+    1. Cuando veas que ha fallado algun tests no te alarmes ya que esto es algo positivo, por ejemplo si tienes 20 test y han fallado 10 lo más probable es que esto significa qué sucedió algún tipo de cambio en el codigo en algún fichero spec, posiblemente se pueda haber añadido algún pipe algo parecido pero no significa que este malo solo sería revisarlo y verificar bien error.
+
+    2. No solo pruebes los métodos en los cuales te irá bien sino que también se pueden probar métodos para que falle la prueba, para así ver cómo actuaría nuestro código ante un posible fallo y allí estamos comprobando cómo nuestra aplicación actuaría ante errores.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
