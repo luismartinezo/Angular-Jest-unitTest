@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../models/book.model';
 import { MatDialog } from '@angular/material/dialog';
-import { ConfirmationComponent } from 'src/app/dialogs/confirmation/confirmation.component';
+import { ConfirmationComponent } from '../../dialogs/confirmation/confirmation.component';
 
 @Component({
   selector: 'app-cart',

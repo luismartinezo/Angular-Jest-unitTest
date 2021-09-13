@@ -5,9 +5,11 @@ import { BookService } from '../../services/book.service';
 import {
   CUSTOM_ELEMENTS_SCHEMA,
   DebugElement,
-  NO_ERRORS_SCHEMA,
+  NO_ERRORS_SCHEMA
 } from '@angular/core';
 import { Book } from '../../models/book.model';
+import { MatDialog } from '@angular/material/dialog';
+import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
 // Utilizamos este arreglo para validar price y amount para el metodo getTotalPrice
@@ -35,6 +37,15 @@ const listBook: Book[] = [
   },
 ];
 
+const MatDialogMock = {
+  open() {
+      return {
+        // devuelve un observable en true 
+          afterClosed: () => of(true)
+      };
+  }
+};
+
 describe('Cart component', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
@@ -54,6 +65,7 @@ describe('Cart component', () => {
       providers: [
         // Nombre se Service relacionado
         BookService,
+        { provide: MatDialog, useValue: MatDialogMock },
       ],
     //   Se añaden estas dos constantes y se recomiendan mucho para los test
       schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
@@ -181,6 +193,7 @@ describe('Cart component', () => {
     expect(spy1).toHaveBeenCalledTimes(1);
   });
 
+  
   it('The title "The cart is empty" is not displayed when there is a list', () => {
     component.listCartBook = listBook;
     fixture.detectChanges();

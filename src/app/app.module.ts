@@ -5,20 +5,22 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BookService } from './services/book.service';
-import { ConfirmationComponent } from './dialogs/confirmation/confirmation.component';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmationModule } from './dialogs/confirmation/confirmation.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConfirmationComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     PagesModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatDialogModule,
+    ConfirmationModule
   ],
   providers: [
     BookService
