@@ -193,7 +193,7 @@ describe('Cart component', () => {
     expect(spy1).toHaveBeenCalledTimes(1);
   });
 
-  
+  // COMPRUEBA QUE APAREZCA EL TEXTO "The cart is empty" CUANDO LA LISTA NO ESTE VACIA
   it('The title "The cart is empty" is not displayed when there is a list', () => {
     component.listCartBook = listBook;
     fixture.detectChanges();
@@ -202,7 +202,7 @@ describe('Cart component', () => {
     );
     expect(debugElement).toBeFalsy();
   });
-
+// COMPRUEBA QUE APAREZCA EL TEXTO "The cart is empty" CUANDO LA LISTA ESTE VACIA
   it('The title "The cart is empty" is displayed correctly when the list is empty', () => {
     component.listCartBook = [];
     fixture.detectChanges();
