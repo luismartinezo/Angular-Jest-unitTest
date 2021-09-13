@@ -84,6 +84,7 @@ describe('Cart component', () => {
     expect(component).toBeTruthy();
   });
 
+  // Instanciamos un componente
   // it('should create', inject([CartComponent], (component2: CartComponent) => {
   //     expect(component2).toBeTruthy();
   // }));

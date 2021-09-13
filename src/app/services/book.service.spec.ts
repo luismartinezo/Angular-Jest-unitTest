@@ -81,17 +81,18 @@ describe('BookService', () => {
         req.flush(listBook);
     });
 
+    // tEST QUE VALIDA QUE CUANDO EL LOCAL_STORAGE ESTE VACIO RETORNE UN ARRAY VACIO
     it('getBooksFromCart return an empty array when localStorage is empty', () => {
         const listBook = service.getBooksFromCart();
         expect(listBook.length).toBe(0);
     });
-    
+    // TEST QUE DEVUELVE UN ARRAY DE LIBRSO CUANDO HALLA EN EL LOCAL_STORAGE
     it('getBooksFromCart return an array of books when it exists in the localStorage', () => {
         localStorage.setItem('listCartBook', JSON.stringify(listBook));
         const newListBook = service.getBooksFromCart(); 
         expect(newListBook.length).toBe(3);
     });
-    
+    // TEST QUE PERMITE AGREGAR UN LIBRO CORRECTAMENTE CUANDO EL LIBRO NO ESTE EL LOCAL_STORAGE
     it('addBookToCart add a book successfully when the list does not exits in the localStorage', () => {
         const book: Book = {
             name: '',
@@ -117,6 +118,7 @@ describe('BookService', () => {
     //     localStorage.setItem('listCartBook', null);
     //   }
 
+    // TEST QUE VALIDA SI ELIMINA LA LISTA EN EL LOCAL_STORAGE
     it('removeBooksFromCart removes the list fron the localStorage', () => {
         const toastMock = {
             fire: () => null
@@ -132,9 +134,13 @@ describe('BookService', () => {
         };
         service.addBookToCart(book);
         let newListBook = service.getBooksFromCart();
+        // Verifica que halla un libro
         expect(newListBook.length).toBe(1);
+        // Envia el service para eliminar
         service.removeBooksFromCart();
+        // Volvemos a actualizar la lista de libro
         newListBook = service.getBooksFromCart();
+        // Verificamos que sea cer0
         expect(newListBook.length).toBe(0);
     });
 
