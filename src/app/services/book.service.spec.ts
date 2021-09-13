@@ -50,10 +50,12 @@ describe('BookService', () => {
     });
 
     beforeEach( ()=> {
+        // Instancia los servicios y un mocks
         service = TestBed.inject(BookService);
         httpMock = TestBed.inject(HttpTestingController);
     });
 
+    // Despues del test verifica que no hallan peticiones pendientes entre cada test 
     afterEach( () => {
         localStorage.clear();
         jest.resetAllMocks();
@@ -69,10 +71,12 @@ describe('BookService', () => {
 
     it('getBooks return a list of book and does a get method', () => {
         service.getBooks().subscribe((resp: Book[]) => {
+            // Esperamos que el array que recibamos sea igual a la que tenemos creada arriba 
             expect(resp).toEqual(listBook);
         });
 
         const req = httpMock.expectOne(environment.API_REST_URL + `/book`);
+        // Se espera que la peticion sea tipo GET 
         expect(req.request.method).toBe('GET');
         req.flush(listBook);
     });

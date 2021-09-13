@@ -34,6 +34,7 @@ const bookServiceMock = {
     getBooks: () => of(listBook)
 };
 
+// Probar pipe para reducir texto 
 @Pipe({ name: 'reduceText' })
 class ReducePipeMock implements PipeTransform {
     transform() : string {
@@ -81,6 +82,7 @@ describe('Home component', () => {
         // const spy1 = jest.spyOn(bookService, 'getBooks').mockReturnValueOnce( of(listBook) );
         component.getBooks();
         // expect(spy1).toHaveBeenCalledTimes(1);
+        // Tamaño del array es igual a 3, si devolviera mas daria fallo la validacion
         expect(component.listBook.length).toBe(3);
         expect(component.listBook).toEqual(listBook);
     });
