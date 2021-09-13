@@ -39,6 +39,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Test a métodos sin return (uso de spyOn)
 ### Test a métodos privados
 ### Test a suscripciones(subscribe-Observable)
+### Mock de un servicio
+### xit, fit, xdescribbe, fedescribe, describe.only
+* las opciones de *xit* hace el test no se ejecute y que sea nulo o se evita igualmente se puede hacer para *xdescribe*
+* Para *fit* y *fdescribe* hace lo contrario, se ejecuta unicamente el test que se halla marcado como *fit* o *fdescribe*
+* La opcion *it.oonly* hace exactamente lo mismo que la anterior, se ejecuta ese solo test que se marco dentro del archivo spec 
+### beforeEach, beforeAll, afterEach, afterAll
+como sus nombre en ingles lo indican estos:
+* beforeEach se ejecta antes del test 
+* beforeAll se ejecta antes de todo los test
+* afterEach se ejecta despues del test
+* afterAll se ejecta despues de todos los test
+### Test a un Pipe 
+### Test a un servicio con peticion API
+### Instanciar un componente o un servicio 
+### Testear Rutas 
+
+## Angular Material Dialog
+* Instalamos el angular material con `ng add @angular/material`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

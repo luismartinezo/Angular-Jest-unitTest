@@ -4,6 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing'
 import { Router } from '@angular/router';
 
+// Esta clase fue creada para limpiar mas el test 
 class ComponentTestRoute {}
 
 // const routerMock = {
@@ -43,10 +44,12 @@ describe('Nav component', () => {
         fixture.detectChanges();
     });
 
+    // Test de que el component se ha creado correctamente
     it('should create', () => {
         expect(component).toBeTruthy();
     });
 
+    // Test para navegacion 
     it('should navigate', () => {
         const router = TestBed.inject(Router);
 
